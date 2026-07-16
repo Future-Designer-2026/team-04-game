@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#dff5ff" />
+  <title>Story Spark Fairytale World</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" as="image" href="assets/story-assets/bell.png" />
+  <link rel="preload" as="image" href="assets/story-assets/moon.png" />
+  <link rel="preload" as="image" href="assets/story-assets/candy.png" />
+  <link rel="preload" as="image" href="assets/sequence-cards/bunny-seed.png" />
+  <link rel="preload" as="image" href="assets/sequence-cards/bear-ribbon.png" />
+  <link rel="preload" as="image" href="assets/sequence-cards/penguin-star.png" />
+  <link rel="preload" as="image" href="assets/story-assets/garden-tree.png" />
+  <link rel="preload" as="image" href="assets/story-assets/cloud.png" />
+  <link rel="preload" as="image" href="assets/story-assets/cloud-unicorn.png" />
+  <link rel="preload" as="image" href="assets/story-assets/cake-hill.png" />
+  <link rel="preload" as="image" href="assets/story-assets/dragon-home.png" />
+  <link rel="preload" as="image" href="assets/story-assets/sky-ride.png" />
+  <link rel="preload" as="image" href="assets/story-assets/cloud-castle.png" />
+  <link rel="preload" as="image" href="assets/story-assets/ribbon-bell.png" />
+  <link rel="preload" as="image" href="assets/story-assets/rock.png" />
+  <link rel="preload" as="image" href="assets/story-assets/octopus.png" />
+  <link rel="preload" as="image" href="assets/story-assets/flying-whale.png" />
+  <link rel="preload" as="image" href="assets/story-assets/cookie-rocket.png" />
+  <link rel="preload" as="image" href="assets/story-assets/moon-princess.png" />
+  <link rel="preload" as="image" href="assets/story-assets/returning-star.png" />
+  <link rel="preload" as="image" href="assets/story-scenes/final-18-stars.png" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Listen • Imagine • Build a Story</p>
+        <h1>Story Spark Fairytale World</h1>
+      </div>
+      <div class="top-actions"><button id="soundButton" class="icon-button sound-button" type="button" aria-label="Turn sound off">
+          <svg viewBox="0 0 48 48" width="28" height="28" aria-hidden="true">
+            <path d="M8 19h8l10-8v26l-10-8H8z" fill="#6f63c7"/>
+            <path d="M32 17c3 4 3 10 0 14M37 12c6 7 6 17 0 24" fill="none" stroke="#6f63c7" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="progress-pill" aria-label="Stars collected">
+          <svg viewBox="0 0 48 48" width="26" height="26" aria-hidden="true">
+            <path d="M24 5l5.8 11.8 13 1.9-9.4 9.1 2.2 12.9L24 34.6l-11.6 6.1 2.2-12.9-9.4-9.1 13-1.9z" fill="#ffd65a" stroke="#d79624" stroke-width="2"/>
+          </svg>
+          <strong id="totalStars">0</strong>
+        </div></div>
+    </header>
+
+    <section id="homeScreen" class="screen active" aria-labelledby="homeTitle">
+      <div class="hero-card storybook-welcome">
+        <button id="guideProfileButton" class="mascot cartoon-guide profile-guide-button" type="button" aria-label="Choose your story maker icon">
+          <img class="generated-profile-icon" src="assets/profile-icons/cat.png" alt="" aria-hidden="true" />
+          <span class="profile-guide-label">Choose my icon</span>
+        </button>
+        <div class="welcome-copy">
+          <p class="welcome-kicker">Your magical adventure begins here</p>
+          <h2 id="homeTitle">Welcome, Story Maker!</h2>
+          <p>Pick an animal friend, play a short story, learn easy English words, and earn stars.</p>
+          <button id="openProfileButton" class="secondary-button profile-open-button" type="button">My Story Maker Icon</button>
+        </div>
+      </div>
+
+      <section id="profilePanel" class="profile-panel" aria-labelledby="profileTitle" hidden>
+        <div class="profile-panel-header">
+          <div>
+            <p class="eyebrow">Star Shop</p>
+            <h2 id="profileTitle">Choose Your Story Maker Icon</h2>
+            <p>Earn stars in stories, then unlock a new animal friend. Unlocked animals stay in your collection.</p>
+          </div>
+          <button id="closeProfileButton" class="icon-button profile-close" type="button" aria-label="Close profile icon picker">×</button>
+        </div>
+        <div class="profile-wallet" aria-live="polite">
+          <span>Available stars</span>
+          <strong id="availableStars">0</strong>
+        </div>
+        <div id="profileGrid" class="profile-grid"></div>
+      </section>
+
+      <section class="fairytale-world" aria-label="Fairytale story world">
+        <div class="sky-decoration" aria-hidden="true">
+          <svg viewBox="0 0 900 100" preserveAspectRatio="none">
+            <g fill="#ffffff" opacity=".8">
+              <path d="M65 66c0-14 12-25 27-25 6-18 33-20 43-4 18-4 34 8 34 24 0 16-14 25-32 25H87c-13 0-22-8-22-20z"/>
+              <path d="M650 61c0-13 11-23 25-23 8-19 37-19 45 0 18-3 32 8 32 23 0 15-12 24-29 24h-48c-15 0-25-9-25-24z"/>
+            </g>
+            <g fill="#fff2a8">
+              <path d="M310 18l4 10 10 4-10 4-4 10-4-10-10-4 10-4z"/>
+              <path d="M555 34l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/>
+            </g>
+            <path d="M810 14c-20 6-29 30-18 48 9 15 27 20 42 13-13 17-39 20-56 5-19-17-18-47 1-63 9-7 20-10 31-8z" fill="#fff4b8"/>
+          </svg>
+        </div>
+        <div id="growingWorld" class="growing-world" aria-live="polite"></div>
+        <div id="sceneMap" class="scene-map"></div>
+      </section>
+
+      <div class="world-progress">
+        <div class="world-track"><div id="worldFill" class="world-fill"></div></div>
+        <p id="worldMessage">Finish stories to make the fairytale world grow.</p>
+      </div>
+
+      <button id="finalWorldButton" class="primary-button final-world-button" type="button" disabled>Final World Locked — Earn 18 Stars</button>
+      <button id="resetButton" class="text-button" type="button">Reset progress</button>
+    </section>
+
+    <section id="gameScreen" class="screen" aria-live="polite">
+      <div class="game-header">
+        <button id="homeButton" class="icon-button" type="button" aria-label="Go to fairytale world">←</button>
+        <div>
+          <p id="stepLabel" class="eyebrow"></p>
+          <h2 id="storyTitle"></h2>
+        </div>
+        <div id="storyStars" class="mini-stars" aria-label="Story progress">☆☆☆☆☆☆</div>
+      </div>
+      <div class="step-dots" aria-label="Story activity progress"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div id="gamePanel" class="game-panel"></div>
+    </section>
+
+    <section id="celebrationScreen" class="screen celebration-screen">
+      <div class="celebration-card">
+        <div class="confetti" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+        <div id="rewardEmoji" class="reward-emoji" aria-hidden="true"><svg viewBox="0 0 120 120" width="110" height="110"><circle cx="60" cy="44" r="34" fill="#7acb72"/><circle cx="38" cy="53" r="25" fill="#91da82"/><circle cx="82" cy="55" r="24" fill="#68b963"/><path d="M53 64h14l7 44H46z" fill="#a96f45"/><path d="M60 67v36" stroke="#7b4d32" stroke-width="5" stroke-linecap="round"/></svg></div>
+        <h2 id="celebrationTitle">Story Complete!</h2>
+        <p id="celebrationText"></p>
+        <div class="earned-stars" aria-label="Six stars earned"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <button id="nextStoryButton" class="primary-button" type="button">Enter the Next Scene</button>
+        <button id="mapButton" class="secondary-button" type="button">Back to Fairytale World</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js?v=20260715-1"></script>
+</body>
+</html>
